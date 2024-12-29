@@ -1,58 +1,47 @@
 /**
-Function injects specified HTML file to specified HTML 
-node of the current file
-@param filePath - a path to a source HTML file to inject
-@param elem - an HTML element to which this content will 
-be injected
-*/
+ * Injects the content of an HTML file into a specified HTML element.
+ * @param {string} filePath - Path to the HTML file to inject.
+ * @param {HTMLElement} elem - The target HTML element for content injection.
+ * sample
+ */
 async function injectHTML(filePath, elem) {
   try {
+    // Fetch the HTML file
     const response = await fetch(filePath);
+
+    // Handle fetch errors
     if (!response.ok) {
+      console.error(
+        `Failed to fetch file: ${filePath} (Status: ${response.status})`
+      );
       return;
     }
-    const text = await response.text();
-    elem.innerHTML = text;
-    // reinject all <script> tags
-    // for each <script> tag on injected html
-    elem.querySelectorAll('script').forEach((script) => {
-      // create a new empty <script> tag
-      const newScript = document.createElement('script');
-      // copy attributes of existing script tag
-      // to a new one
-      Array.from(script.attributes).forEach((attr) =>
-        newScript.setAttribute(attr.name, attr.value)
-      );
-      // inject a content of existing script tag
-      // to a new one
-      newScript.appendChild(document.createTextNode(script.innerHTML));
-      // replace existing script tag to a new one
-      script.parentNode.replaceChild(newScript, script);
-    });
-  } catch (err) {
-    console.error(err.message);
+
+    // Inject the fetched content into the target element
+    const htmlContent = await response.text();
+    elem.innerHTML = htmlContent;
+  } catch (error) {
+    console.error(`Error injecting HTML from ${filePath}:`, error.message);
   }
 }
 
 /**
-    
-    
-    
-    
-    Function used to process all HTML tags of the following
-    
-    format: <div include="<filename>"></div>
-    
-    
-    
-    This function injects a content of <filename> to
-    
-    each div with the "include" attribute
-    */
+ * Processes all <div> elements with an "include" attribute.
+ * Injects the content of the specified HTML file into each matching element.
+ */
 function injectAll() {
-  document.querySelectorAll('div[include]').forEach((elem) => {
-    injectHTML(elem.getAttribute('include'), elem);
+  const elements = document.querySelectorAll('div[include]');
+
+  elements.forEach((elem) => {
+    const filePath = elem.getAttribute('include');
+
+    if (filePath) {
+      injectHTML(filePath, elem);
+    } else {
+      console.warn('Missing "include" attribute in element:', elem);
+    }
   });
 }
 
+// Initialize the injection process
 injectAll();

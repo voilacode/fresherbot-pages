@@ -1,66 +1,193 @@
-<header class="fixed z-10 w-screen text-white bg-sky-700" id="header">
-    <nav class="text-sm transition-all duration-500 ease-in-out">
-        <div class="items-center justify-between max-w-screen-xl px-4 py-2 mx-auto lg:flex">
-            <div class="flex items-center justify-between">
-                <a href="/" class="inline-flex py-2 text-xl font-bold tracking-wider uppercase me-auto">
-                    <img src="../assets/logo_fresherbot.png" alt="logo" width="180px" />
-                </a>
-                <div class="lg:hidden">
-                    <button id="mobileMenuToggle" class="text-white focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-                        </svg>
-                    </button>
+<nav class="bg-gradient-to-r from-sky-600 to-sky-700 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Main navbar container -->
+        <div class="flex justify-between">
+            <!-- Logo -->
+            <div class="flex items-center py-4">
+                <img src="../assets/global/logo_fresherbot_dark.png"
+                    alt="Fresherbot Logo" class="h-8" />
+             </div>
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-1">
+                <div class="py-1">
+                    <a href="home.html" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Home</a>
+                    <!-- For Colleges dropdown -->
+                    <div class="relative inline-block group">
+                        <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
+                            <span>For Colleges</span>
+                            <span class="ml-2 chevron-down">&#9661;</span>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div class="dropdown-content absolute left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-100">
+                            <div class="p-2">
+                                <a href="lms-platform.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    LMS Platform
+                                </a>
+                                <a href="communication-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Communication Lab
+                                </a>
+                                <a href="programming-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Programming Lab
+                                </a>
+                                <a href="technical-training.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Technical Training
+                                </a>
+                                <a href="crt-program.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    CRT Program
+                                </a>
+                                <a href="hr-campus-connect.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    HR Campus Connect
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Companies dropdown -->
+                    <div class="relative inline-block group">
+                        <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
+                            <span>For Companies</span>
+                            <span class="ml-2 chevron-down">&#9661;</span>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div class="dropdown-content absolute left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-100">
+                            <div class="p-2">
+                                <a href="spectrum-test.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Spectrum Test
+                                </a>
+                                <a href="hiring-assessments.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Hiring Assessments
+                                </a>
+                                <a href="hackathons.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Hackathons
+                                </a>
+                                <a href="campus-drives.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Campus Drives
+                                </a>
+                                <a href="center-of-excellence.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Center of Excellence
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Candidates dropdown -->
+                    <div class="relative inline-block group">
+                        <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
+                            <span>For Candidates</span>
+                            <span class="ml-2 chevron-down">&#9661;</span>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div class="dropdown-content absolute left-0 w-56 bg-white rounded-lg shadow-xl border border-gray-100">
+                            <div class="p-2">
+                                <a href="job-openings.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Job Openings
+                                </a>
+                                <a href="job-training.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Job Training
+                                </a>
+                                <a href="propel-5000.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Propel 5000
+                                </a>
+                                <a href="interview-prep.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Interview Prep
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Contact</a>
                 </div>
             </div>
-            <div id="menuLinks" class="hidden lg:flex flex-col lg:flex-row lg:space-x-4">
-                <div class="relative">
-                    <button class="dropdown-btn text-white hover:text-sky-200 focus:outline-none">
-                        For Colleges
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-4 h-4 inline-block">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu hidden absolute bg-white text-black rounded shadow-md mt-2 w-48">
-                        <a href="lms-platform.html" class="block px-4 py-2 hover:bg-sky-200">LMS Platform</a>
-                        <a href="training-internship.html" class="block px-4 py-2 hover:bg-sky-200">Training Internship</a>
-                        <a href="crt.html" class="block px-4 py-2 hover:bg-sky-200">CRT Program</a>
-                        <a href="placements.html" class="block px-4 py-2 hover:bg-sky-200">Placements</a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <button class="dropdown-btn text-white hover:text-sky-200 focus:outline-none">
-                        For Companies
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-4 h-4 inline-block">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu hidden absolute bg-white text-black rounded shadow-md mt-2 w-48">
-                        <a href="spectrum-test.html" class="block px-4 py-2 hover:bg-sky-200">Spectrum Test</a>
-                        <a href="hiring-assessments.html" class="block px-4 py-2 hover:bg-sky-200">Hiring Assessments</a>
-                        <a href="hackathons.html" class="block px-4 py-2 hover:bg-sky-200">Hackathons</a>
-                        <a href="campus-drives.html" class="block px-4 py-2 hover:bg-sky-200">Campus Drives</a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <button class="dropdown-btn text-white hover:text-sky-200 focus:outline-none">
-                        For Candidates
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                            stroke="currentColor" class="w-4 h-4 inline-block">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu hidden absolute bg-white text-black rounded shadow-md mt-2 w-48">
-                        <a href="propel5000.html" class="block px-4 py-2 hover:bg-sky-200">Propel5000</a>
-                        <a href="job-training.html" class="block px-4 py-2 hover:bg-sky-200">Job Training</a>
-                        <a href="interview-prep.html" class="block px-4 py-2 hover:bg-sky-200">Interview Prep</a>
-                        <a href="job" class="block px-4 py-2 hover:bg-sky-200">Job Openings</a>
-                    </div>
-                </div>
+
+            <!-- Mobile button -->
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button p-4 text-white hover:bg-sky-600 hover:rounded-md focus:outline-none" onclick="toggleMenu()">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
-</header>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu hidden md:hidden">
+        <div class="px-2 py-3 space-y-1">
+            <a href="home.html" class="block px-4 py-2 text-white hover:bg-sky-700 rounded-md">Home</a>
+            
+            <div class="relative">
+                <button onclick="toggleSubmenu('colleges')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-sky-700 rounded-md">
+                    <span>For Colleges</span>
+                    
+                    <span class="ml-2 chevron-down">&#9661;</span>
+                </button>
+                <div id="colleges" class="hidden pl-4">
+                    <a href="lms-platform.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md mt-1">LMS Platform</a>
+                    <a href="communication-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Communication Lab</a>
+                    <a href="programming-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Programming Lab</a>
+                    <a href="technical-training.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Technical Training</a>
+                    <a href="crt-program.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">CRT Program</a>
+                    <a href="hr-campus-connect.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">HR Campus Connect</a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button onclick="toggleSubmenu('companies')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-sky-700 rounded-md">
+                    <span>For Companies</span>
+                    
+                    <span class="ml-2 chevron-down">&#9661;</span>
+                </button>
+                <div id="companies" class="hidden pl-4">
+                    <a href="spectrum-test.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md mt-1">Spectrum Test</a>
+                    <a href="hiring-assessments.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Hiring Assessments</a>
+                    <a href="hackathons.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Hackathons</a>
+                    <a href="campus-drives.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Campus Drives</a>
+                    <a href="center-of-excellence.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Center of Excellence</a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button onclick="toggleSubmenu('candidates')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-sky-700 rounded-md">
+                    <span>For Candidates</span>
+                    
+                    <span class="ml-2 chevron-down">&#9661;</span>
+                </button>
+                <div id="candidates" class="hidden pl-4">
+                    <a href="job-openings.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md mt-1">Job Openings</a>
+                    <a href="job-training.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Job Training</a>
+                    <a href="propel-5000.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Propel 5000</a>
+                    <a href="interview-prep.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Interview Prep</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="block px-4 py-2 text-white hover:bg-sky-700 rounded-md">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        submenu.classList.toggle('hidden');
+    }
+</script>

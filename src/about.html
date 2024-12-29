@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Dropdown Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth transitions */
+        .nav-link, .dropdown-content {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        /* Dropdown animation */
+        .dropdown-content {
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .group:hover .dropdown-content {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Chevron rotation */
+        .group:hover .chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        .chevron-down {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Main navbar container -->
+            <div class="flex justify-between">
+                <!-- Logo -->
+                <div class="flex items-center py-4">
+                    <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-blue-600 font-bold text-xl">L</span>
+                    </div>
+                    <span class="ml-3 text-white font-semibold text-lg">Logo</span>
+                </div>
+
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <div class="py-4">
+                        <a href="#" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Home</a>
+                        
+                        <!-- Products dropdown -->
+                        <div class="relative inline-block group">
+                            <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
+                                <span>Products</span>
+                                <span class="ml-2 chevron-down">&#9661;</span>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div class="dropdown-content absolute left-0 w-56 bg-white rounded-lg shadow-xl border border-gray-100">
+                                <div class="p-2">
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Product 1
+                                    </a>
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Product 2
+                                    </a>
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Product 3
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services dropdown -->
+                        <div class="relative inline-block group">
+                            <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
+                                <span>Services</span>
+                                <span class="ml-2 chevron-down">&#9661;</span>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div class="dropdown-content absolute left-0 w-56 bg-white rounded-lg shadow-xl border border-gray-100">
+                                <div class="p-2">
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Service 1
+                                    </a>
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Service 2
+                                    </a>
+                                    <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                        <span class="mr-3 ">&#x21B3;</span>
+                                        Service 3
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button p-4 text-white hover:bg-blue-700 focus:outline-none" onclick="toggleMenu()">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 py-3 space-y-1">
+                <a href="#" class="block px-4 py-2 text-white hover:bg-blue-700 rounded-md">Home</a>
+                
+                <div class="relative">
+                    <button onclick="toggleSubmenu('products')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-blue-700 rounded-md">
+                        <span>Products</span>
+                        
+                        <span class="ml-2 chevron-down">&#9661;</span>
+                    </button>
+                    <div id="products" class="hidden pl-4">
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md mt-1">Product 1</a>
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md">Product 2</a>
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md">Product 3</a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <button onclick="toggleSubmenu('services')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-blue-700 rounded-md">
+                        <span>Services</span>
+                        
+                        <span class="ml-2 chevron-down">&#9661;</span>
+                    </button>
+                    <div id="services" class="hidden pl-4">
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md mt-1">Service 1</a>
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md">Service 2</a>
+                        <a href="#" class="block px-4 py-2 text-blue-100 hover:bg-blue-700 rounded-md">Service 3</a>
+                    </div>
+                </div>
+
+                <a href="#" class="block px-4 py-2 text-white hover:bg-blue-700 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleSubmenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

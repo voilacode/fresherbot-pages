@@ -56,11 +56,14 @@ We have implemented a new `modules.js` script that dynamically imports the heade
 ### **4. Avoid Custom CSS**
 
 - Rely entirely on **TailwindCSS classes** for styling.
+- The compiled CSS is stored in `output.css`. This stylesheet must be linked for Tailwind CSS to take effect. Use `npm run build` to compile the CSS.
 - Refrain from writing custom CSS to ensure design consistency across all pages.
 
 ---
 
 ## **Folder Structure**
+
+Do not change the folder structure as this pattern is used to map the pages in the ViolaCode application built in Laravel.
 
 ```plaintext
 /
@@ -74,7 +77,7 @@ We have implemented a new `modules.js` script that dynamically imports the heade
 │   │   ├── example-page.js   # Page-specific JavaScript
 │   │   └── ...           # Other scripts
 │   ├── css/              # CSS files
-│   │   ├── tailwind.css  # Tailwind-generated CSS
+│   │   ├── output.css  # Tailwind-generated CSS
 │   │   └── ...           # Other stylesheets
 │   ├── modules/          # Custom reusable HTML modules
 │   │   ├── header.html   # Shared header file

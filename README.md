@@ -2,7 +2,7 @@
 
 Welcome to the FresherBot project! This repository contains all the TailwindCSS-based web pages, ensuring a clean, modular, and consistent design. Below are the guidelines and best practices for working on this project to maintain design uniformity and code scalability.
 
----
+## [![Visit Fresherbot Pages Live](https://img.shields.io/badge/Visit-Fresherbot%20Pages-blue?style=for-the-badge)](https://voilacode.github.io/fresherbot-pages/)
 
 ## **New Feature: Modular Header and Footer**
 

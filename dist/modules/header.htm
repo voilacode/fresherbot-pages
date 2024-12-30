@@ -4,13 +4,14 @@
         <div class="flex justify-between">
             <!-- Logo -->
             <div class="flex items-center py-4">
+                <a href="/">
                 <img src="../assets/global/logo_fresherbot_dark.png"
                     alt="Fresherbot Logo" class="h-8" />
+                </a>
              </div>
             <!-- Desktop menu -->
             <div class="hidden md:flex items-center space-x-1">
                 <div class="py-1">
-                    <a href="home.html" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Home</a>
                     <!-- For Colleges dropdown -->
                     <div class="relative inline-block group">
                         <button class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium inline-flex items-center">
@@ -24,13 +25,13 @@
                                     <span class="mr-3">&#x21B3;</span>
                                     LMS Platform
                                 </a>
-                                <a href="communication-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                <a href="ai-communication-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
                                     <span class="mr-3">&#x21B3;</span>
-                                    Communication Lab
+                                    AI Communication Lab
                                 </a>
-                                <a href="programming-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                <a href="ai-programming-lab.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
                                     <span class="mr-3">&#x21B3;</span>
-                                    Programming Lab
+                                    AI Programming Lab
                                 </a>
                                 <a href="technical-training.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
                                     <span class="mr-3">&#x21B3;</span>
@@ -98,6 +99,10 @@
                                     <span class="mr-3">&#x21B3;</span>
                                     Job Training
                                 </a>
+                                <a href="training-internship.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
+                                    <span class="mr-3">&#x21B3;</span>
+                                    Training Internship
+                                </a>
                                 <a href="propel-5000.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-md flex items-center">
                                     <span class="mr-3">&#x21B3;</span>
                                     Propel 5000
@@ -111,11 +116,14 @@
                     </div>
 
                     <a href="contact.html" class="nav-link py-4 px-4 text-white hover:text-blue-100 font-medium">Contact</a>
+                    <a href="/login" class="nav-link py-3 px-4 bg-yellow-600 rounded-md hover:bg-yellow-500 text-white hover:text-blue-100 font-medium">Login</a>
+                
                 </div>
             </div>
 
             <!-- Mobile button -->
             <div class="md:hidden flex items-center">
+                <a href="/login" class="nav-link py-2 px-4 bg-yellow-600 rounded-md hover:bg-yellow-500 text-white hover:text-blue-100 font-medium">Login</a>
                 <button class="mobile-menu-button p-4 text-white hover:bg-sky-600 hover:rounded-md focus:outline-none" onclick="toggleMenu()">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -128,8 +136,7 @@
     <!-- Mobile menu -->
     <div class="mobile-menu hidden md:hidden">
         <div class="px-2 py-3 space-y-1">
-            <a href="home.html" class="block px-4 py-2 text-white hover:bg-sky-700 rounded-md">Home</a>
-            
+           
             <div class="relative">
                 <button onclick="toggleSubmenu('colleges')" class="w-full text-left flex items-center justify-between px-4 py-2 text-white hover:bg-sky-700 rounded-md">
                     <span>For Colleges</span>
@@ -138,8 +145,8 @@
                 </button>
                 <div id="colleges" class="hidden pl-4">
                     <a href="lms-platform.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md mt-1">LMS Platform</a>
-                    <a href="communication-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Communication Lab</a>
-                    <a href="programming-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Programming Lab</a>
+                    <a href="ai-communication-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">AI Communication Lab</a>
+                    <a href="ai-programming-lab.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">AI Programming Lab</a>
                     <a href="technical-training.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Technical Training</a>
                     <a href="crt-program.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">CRT Program</a>
                     <a href="hr-campus-connect.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">HR Campus Connect</a>
@@ -170,6 +177,7 @@
                 <div id="candidates" class="hidden pl-4">
                     <a href="job-openings.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md mt-1">Job Openings</a>
                     <a href="job-training.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Job Training</a>
+                    <a href="training-internship.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Training Internship</a>
                     <a href="propel-5000.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Propel 5000</a>
                     <a href="interview-prep.html" class="block px-4 py-2 text-blue-100 hover:bg-sky-700 rounded-md">Interview Prep</a>
                 </div>
